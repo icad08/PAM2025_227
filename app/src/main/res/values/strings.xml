@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Nguliner</string>
+    <string name="app_tagline">Jelajahi Kuliner UMKM Jogja</string>
+
+    <string name="btn_login_mitra">Masuk sebagai Mitra UMKM</string>
+    <string name="btn_guest">Lihat Katalog (Tanpa Login)</string>
+
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="label_nama_toko">Nama Toko / Warung</string>
+    <string name="label_nama_pemilik">Nama Pemilik</string>
+    <string name="btn_login">Masuk</string>
+    <string name="btn_register">Daftar Sekarang</string>
+    <string name="text_belum_punya_akun">Belum jadi mitra? Daftar di sini</string>
+    <string name="text_sudah_punya_akun">Sudah punya akun? Masuk di sini</string>
+
+    <string name="hint_search">Cari kuliner (ex: Gudeg)...</string>
+    <string name="menu_tambah">Tambah Menu</string>
+    <string name="empty_data">Belum ada menu kuliner.</string>
+
+    <string name="label_nama_makanan">Nama Makanan</string>
+    <string name="label_harga">Harga (Rp)</string>
+    <string name="label_deskripsi">Deskripsi</string>
+    <string name="btn_pilih_foto">Pilih Foto Menu</string>
+    <string name="btn_simpan">Simpan Menu</string>
+    <string name="btn_update">Update Menu</string>
+    <string name="btn_hapus">Hapus</string>
+
+    <string name="error_wajib_diisi">Kolom ini wajib diisi!</string>
+    <string name="msg_login_sukses">Berhasil Masuk!</string>
+    <string name="msg_simpan_sukses">Data berhasil disimpan</string>
+</resources>

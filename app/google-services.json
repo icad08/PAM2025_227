@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "745636057450",
+    "project_id": "nguliner-50f18",
+    "storage_bucket": "nguliner-50f18.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745636057450:android:2b51c82449eddd2ee51513",
+        "android_client_info": {
+          "package_name": "com.example.nguliner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2W7Fb14_1j-psRRpPob7Lhy_GlUUyS_Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
