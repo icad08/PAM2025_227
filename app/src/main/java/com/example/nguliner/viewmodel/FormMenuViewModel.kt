@@ -21,9 +21,10 @@ class FormMenuViewModel : ViewModel() {
     var nama by mutableStateOf("")
     var harga by mutableStateOf("")
     var deskripsi by mutableStateOf("")
-    var imageUrl by mutableStateOf("") // Base64 string
+    var imageUrl by mutableStateOf("")
 
-    // [PENTING] Fungsi Load Data (Dipanggil kalau lagi Mode Edit)
+    var kategori by mutableStateOf("Makanan")
+
     fun loadMenuData(menuId: String) {
         viewModelScope.launch {
             isLoading = true
@@ -33,23 +34,22 @@ class FormMenuViewModel : ViewModel() {
                 harga = menu.harga.toString()
                 deskripsi = menu.deskripsi
                 imageUrl = menu.imageUrl
+
+                kategori = if (menu.kategori.isNotEmpty()) menu.kategori else "Makanan"
             }
             isLoading = false
         }
     }
 
-    // [PENTING] Fungsi Simpan Pintar (Bisa Create atau Update)
     fun saveMenu(menuId: String?) {
         viewModelScope.launch {
             isLoading = true
             val hargaInt = harga.toIntOrNull() ?: 0
 
             if (menuId == null) {
-                // Kalau ID kosong -> Berarti TAMBAH BARU
-                formState = repository.addMenuToFirestore(nama, hargaInt, deskripsi, imageUrl)
+                formState = repository.addMenuToFirestore(nama, hargaInt, deskripsi, imageUrl, kategori)
             } else {
-                // Kalau ID ada -> Berarti UPDATE
-                formState = repository.updateMenu(menuId, nama, hargaInt, deskripsi, imageUrl)
+                formState = repository.updateMenu(menuId, nama, hargaInt, deskripsi, imageUrl, kategori)
             }
             isLoading = false
         }
