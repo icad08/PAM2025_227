@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.nguliner.ui.components.SmartImageView
-import com.example.nguliner.utils.CurrencyUtils // [PENTING] Import ini
+import com.example.nguliner.utils.CurrencyUtils
 import com.example.nguliner.viewmodel.DetailViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -104,6 +104,22 @@ fun DetailScreen(
                 )
 
                 Column(modifier = Modifier.padding(16.dp)) {
+
+                    // label kategori
+                    if (menu.kategori.isNotEmpty()) {
+                        AssistChip(
+                            onClick = {},
+                            label = { Text(menu.kategori) },
+                            colors = AssistChipDefaults.assistChipColors(
+                                containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                                labelColor = MaterialTheme.colorScheme.onSecondaryContainer
+                            ),
+                            border = null
+                        )
+                        Spacer(modifier = Modifier.height(8.dp))
+                    }
+
+                    // Nama Makanan
                     Text(
                         text = menu.namaMakanan,
                         fontSize = 24.sp,
@@ -111,6 +127,7 @@ fun DetailScreen(
                     )
                     Spacer(modifier = Modifier.height(8.dp))
 
+                    // Harga
                     Text(
                         text = CurrencyUtils.toRupiah(menu.harga),
                         fontSize = 20.sp,
