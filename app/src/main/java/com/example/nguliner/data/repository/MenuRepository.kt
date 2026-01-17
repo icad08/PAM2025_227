@@ -16,12 +16,13 @@ class MenuRepository {
         nama: String,
         harga: Int,
         deskripsi: String,
-        imageUrl: String
+        imageUrl: String,
+        kategori: String
     ): Result<String> {
         return try {
             val user = auth.currentUser ?: throw Exception("User belum login!")
             val menuId = firestore.collection("menus").document().id
-            val newMenu = Menu(menuId, user.uid, nama, harga, deskripsi, imageUrl)
+            val newMenu = Menu(menuId, user.uid, nama, harga, deskripsi, imageUrl, kategori)
 
             firestore.collection("menus").document(menuId).set(newMenu).await()
             Result.success("Menu berhasil disimpan!")
@@ -86,14 +87,16 @@ class MenuRepository {
         nama: String,
         harga: Int,
         deskripsi: String,
-        imageUrl: String
+        imageUrl: String,
+        kategori: String
     ): Result<String> {
         return try {
             val updateData = mapOf(
                 "namaMakanan" to nama,
                 "harga" to harga,
                 "deskripsi" to deskripsi,
-                "imageUrl" to imageUrl
+                "imageUrl" to imageUrl,
+                "kategori" to kategori
             )
             firestore.collection("menus").document(menuId).update(updateData).await()
             Result.success("Menu berhasil diupdate!")
